@@ -1,0 +1,30 @@
+
+import java.util.*;
+
+public class Divisors {
+    public static void main(String[] args) {
+	int n = 1;
+	int divs = 0;
+	do {
+	     divs = numDivs(n * (n + 1) / 2);
+	     n++;
+	} while (divs < 5);
+	System.out.println("triangular number for: " + n + " = " + n*(n+1)/2 + "\nnum Divisors = " + divs);
+    }
+
+    static int numDivs(long num) {
+	//System.out.println("Triangular number = " + num);
+	long sqrt = Math.round(Math.sqrt(num));
+	// System.out.println("sqrt: " + num + " = " + sqrt);
+	int div = 1;
+	int count = 0;
+	while (div <= num ) {
+	    if (num % div == 0) {
+		//System.out.println(div);
+		count++;
+	    }
+	    div++;
+	}
+	return count;
+    }
+}
